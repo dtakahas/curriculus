@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<%= @bookmark.name %>
+<%= link_to "#{@bookmark.link}", @bookmark.link, target: "_blank" %>
+<%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+<%= link_to 'Back', bookmarks_path %>
