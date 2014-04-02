@@ -5,12 +5,20 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 </head>
 <body>
+  <div class="navbar-header">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Curriculus</a>
+        </div>
+      </div>
+  </div>
+  <div class="container">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-<%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>

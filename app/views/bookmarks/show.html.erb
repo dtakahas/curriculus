@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= @bookmark.name %>
-<%= link_to "#{@bookmark.link}", @bookmark.link, target: "_blank" %>
-<%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
-<%= link_to 'Back', bookmarks_path %>
+<h2><%= @bookmark.name %></h2>
+<div>
+  <%= link_to "#{@bookmark.link}", @bookmark.link, target: "_blank" %>
+</div>
+<div style="padding-top:20px">
+<%= link_to "Edit".html_safe, edit_bookmark_path(@bookmark), class: "btn btn-primary" %>
+<%= link_to 'Back', bookmarks_path, class: "btn btn-primary" %>
+</div>

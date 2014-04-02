@@ -1,10 +1,10 @@
-<h1>Listing bookmarks</h1>
+<h1>My Articles</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
+      <th>Name</th>
+      <th>Link</th>
       <th></th>
     </tr>
   </thead>
@@ -12,11 +12,13 @@
   <tbody>
     <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= bookmark.name %></td>
-        <td><%= link_to "#{bookmark.link}", bookmark.link, target: "_blank" %></td>
-        <td><%= link_to 'Show', bookmark %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><b><%= bookmark.name %></b></td>
+        <td width="400px"><%= link_to "#{bookmark.link}", bookmark.link, target: "_blank" %></td>
+        <td>
+          <%= link_to 'More', bookmark, class: 'btn btn-primary' %>
+          <%= link_to 'Edit', edit_bookmark_path(bookmark), class: 'btn btn-primary' %>
+          <%= link_to 'Delete', bookmark, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Bookmark', new_bookmark_path %>
+<%= link_to 'New Article', new_bookmark_path, class: "btn btn-success" %>
