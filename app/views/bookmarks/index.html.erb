@@ -5,7 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Link</th>
-      <th></th>
+      <th> </th>
     </tr>
   </thead>
 
@@ -13,11 +13,11 @@
     <% @bookmarks.each do |bookmark| %>
       <tr>
         <td><b><%= bookmark.name %></b></td>
-        <td width="400px"><%= link_to "#{bookmark.link}", bookmark.link, target: "_blank" %></td>
-        <td>
-          <%= link_to 'More', bookmark, class: 'btn btn-primary' %>
-          <%= link_to 'Edit', edit_bookmark_path(bookmark), class: 'btn btn-primary' %>
-          <%= link_to 'Delete', bookmark, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td><%= link_to "#{bookmark.link}", bookmark.link, target: "_blank" %></td>
+        <td width="15%">
+          <%= link_to "<span class='glyphicon glyphicon-search'></span>".html_safe, bookmark, class: 'btn btn-primary' %>
+          <%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_bookmark_path(bookmark), class: 'btn btn-primary' %>
+          <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, bookmark, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
