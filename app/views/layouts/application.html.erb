@@ -10,7 +10,14 @@
   <div class="navbar-header">
       <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#">Curriculus</a>
+          <a class="navbar-brand" href="#"><span class="lead">Curriculus</span></a>
+          <ul class="nav navbar-nav">
+            <li>
+              <% if user_signed_in? %>
+                <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+              <% end %>    
+            </li>
+          </ul>
         </div>
       </div>
   </div>
