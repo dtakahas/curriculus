@@ -41,7 +41,7 @@ class BookmarksController < ApplicationController
   # PATCH/PUT /bookmarks/1.json
   def update
     respond_to do |format|
-      if @bookmark.update(bookmark_params)
+      if @bookmark.update(bookmark_params.permit(:name, :link))
         format.html { redirect_to @bookmark, notice: 'Bookmark was successfully updated.' }
         format.json { head :no_content }
       else

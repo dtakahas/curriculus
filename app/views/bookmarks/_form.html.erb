@@ -1,6 +1,6 @@
 <%= form_for(@bookmark) do |f| %>
   <% if @bookmark.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation alert alert-danger">
       <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h2>
 
       <ul>
@@ -10,12 +10,18 @@
       </ul>
     </div>
   <% end %>
-  <%= f.label "Name" %>
-  <%= f.text_field :name %>
-  <%= f.label "URL" %>
-  <%= f.text_field :link %>
-
+  
+  <div class="input-group" style="margin-top:5px;margin-bottom:5px">
+    <span class="input-group-addon">Title</span>
+    <%= f.text_area :name, class: "form-control", style: "width:50%" %>
+  </div>
+  <spacer>
+  <div class="input-group" style="margin-top:5px;margin-bottom:5px">
+    <span class="input-group-addon">Link</span>
+    <%= f.text_area :link, class: "form-control", style: "width:50%" %>
+  </div>
+  <spacer>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update", class: "btn btn-success" %>
   </div>
 <% end %>
