@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @article.name %></h2>
+<div>
+  <%= link_to "#{@article.link}", @article.link, target: "_blank" %>
+</div>
+<div style="padding-top:20px">
+<%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_article_path(@article), class: "btn btn-primary" %>
+<%= link_to 'Back to My Articles', articles_path, class: "btn btn-primary" %>
+</div>

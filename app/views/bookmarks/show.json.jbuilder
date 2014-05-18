@@ -1,1 +1,0 @@
-json.extract! @bookmark, :id, :name, :link

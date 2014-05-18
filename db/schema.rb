@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404205815) do
+ActiveRecord::Schema.define(version: 20140518201845) do
 
-  create_table "bookmarks", force: true do |t|
+  create_table "articles", force: true do |t|
     t.string  "name"
     t.string  "link"
     t.integer "category_id"
